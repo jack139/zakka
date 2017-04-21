@@ -1,0 +1,29 @@
+$def with (name, str, settings)
+
+$var title: 优惠券管理
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>优惠券管理</h3>
+
+<form name="settings" method="post" action="/admin/order_setting">
+<input type="hidden" name="oid" value="$settings[0]" />  
+<p>优惠券编码：$settings[1]</p>
+<p>优惠券说明：$settings[2]</p>
+<p>优惠券状态：
+
+$if settings[3]==1:
+	已使用</p>
+$else:
+	<input type="radio" name="status" value="0" checked="checked" /> 未使用
+	<input type="radio" name="status" value="1" /> 已使用
+	</p>
+
+<p> </p>
+<p>
+$if settings[3]==0:
+  <input class="formbutton" type="submit" name="button" id="button" value="保存" />
+<input class="formbutton" type="button" name="button" id="button" value="返回" onclick="javascript:history.go(-1);"/>
+</p>
+</form>

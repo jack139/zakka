@@ -1,0 +1,43 @@
+$def with (wxuid,tick,hid)
+
+$var title: 验证管理员用户
+$var css:
+$var js:
+$var name: 管理员
+
+
+<h3>验证管理员用户</h3>
+<div >
+<br/>
+  <form id="f_login" name="f_login" method="post" action="/login" data-ajax="false">
+    <input type="hidden" name="wxuid" value="$wxuid">
+    <input type="hidden" name="tick" value="$tick">
+    <input type="hidden" name="hid" value="$hid">
+    <table>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>用户名</td>
+        <td><label>
+          <input type="text" name="name" id="name" />
+        </label></td>
+      </tr>
+      <tr>
+        <td>密码</td>
+        <td><label>
+          <input type="password" name="passwd" id="pwd" />
+        </label></td>
+      </tr>
+      <tr>
+        <td><label>
+          <input data-theme="b" type="submit" name="button" id="button" data-icon="check" value="验证" />
+        </label></td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </form>
+
+ <p> </p>
+ 
+</div>

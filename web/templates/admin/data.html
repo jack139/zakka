@@ -1,0 +1,21 @@
+$def with (name, str, info)
+
+$var title: 数据统计
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>综合数据统计</h3>
+
+<table>
+<tr><td class="dotbt">session总数</td><td class="dotb">$info['sessions']</td></tr>
+<tr><td class="dotbt">系统用户</td>   <td class="dotb">$info['admin']</td></tr>
+<tr><td class="dotbt">所有会员</td>   <td class="dotb">$info['active']</td></tr>
+<tr><td class="dotbt">停用会员</td>   <td class="dotb">$info['nonactive']</td></tr>
+<tr><td class="dotbt">所有优惠券</td> <td class="dotb">$info['cams']</td></tr>
+<tr><td class="dotbt">已用优惠券</td> <td class="dotb">$info['kams']</td></tr>
+<tr><td class="dotbt">微信关注</td>   <td class="dotb">$info['wx']</td></tr>
+<tr><td class="dotbt">微信绑定</td>   <td class="dotb">$info['wx2']</td></tr>
+</table>
+
+<br/>

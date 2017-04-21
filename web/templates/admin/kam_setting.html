@@ -1,0 +1,28 @@
+$def with (name, str, settings)
+
+$var title: 会员管理
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>会员管理</h3>
+
+<form name="settings" method="post" action="/admin/kam_setting">
+<input type="hidden" name="kid" value="$settings[0]" />  
+<p>会员编码：$settings[1]</p>
+<p>会员名称：<input class="formtextinput3" type="text" name="uname" value="$settings[2]"/></p>
+<p>备注说明：<input class="formtextinput3" type="text" name="comment" value="$settings[4]"/></p>
+<p>当前状态：$settings[3]</p>
+<p>新状态：
+    <input type="radio" name="status" value="-" checked="checked" /> 保存不变
+    <input type="radio" name="status" value="OK" /> 正常(OK)
+    <input type="radio" name="status" value="FAIL" /> 停用(FAIL)
+</p>
+<p> </p>
+<p>
+  <input class="formbutton" type="submit" name="button" id="button" value="保存" />
+  <input class="formbutton" type="button" name="button" id="button" value="返回" onclick="javascript:history.go(-1);"/>
+</p>
+</form>
+$if settings[3]=='FAIL':
+  <a class="act" href="/admin/kam_del?kid=$settings[0]" onclick="{if(confirm('确定要删除吗？')){return true;}return false;}">删除</a>

@@ -1,0 +1,16 @@
+$def with (name, str)
+
+$var title: 生成优惠券
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>生成优惠券</h3>
+
+<form name="settings" method="post" action="/admin/order_add">
+<p>优惠券说明：<input class="formtextinput3" type="text" name="comment" value=""/></p>
+<p>分发条件：<input class="formtextinput3" type="text" name="condition" value=""/> (请谨慎填写，不填将默认分发给所有会员)</p>
+<p> </p>
+<p><input class="formbutton" type="submit" name="button" id="button" value="保存" /><p>
+
+</form>

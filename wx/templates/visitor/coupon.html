@@ -1,0 +1,32 @@
+$def with (wxuid,tick,hid)
+
+$var title: 优惠卷管理
+$var css:
+$var js:
+$var name: 管理员
+
+
+<h3>优惠券管理</h3>
+<div >
+<br/>
+  <form id="f_login" name="f_login" method="post" action="/coupon" data-ajax="false">
+    <input type="hidden" name="wxuid" value="$wxuid">
+    <input type="hidden" name="tick" value="$tick">
+    <input type="hidden" name="hid" value="$hid">
+    <table>
+      <tr>
+        <td colspan="2">&nbsp;</td>
+      </tr>
+      <tr>
+        <td>优惠券编号</td>
+        <td><label>
+          <input type="text" name="code" id="name" />
+        </label></td>
+      </tr>
+    </table>
+    <label><input data-theme="b" type="submit" name="button" id="button" data-icon="check" value="查找优惠券" /></label>
+  </form>
+
+ <p> </p>
+
+</div>

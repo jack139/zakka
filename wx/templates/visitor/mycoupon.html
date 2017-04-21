@@ -1,0 +1,42 @@
+$def with (uname, coupons, msg='')
+
+$var title: 我的优惠券
+$var css: /static/layout_html5.css
+$var js:
+$var name: $uname
+
+
+<h3>我的优惠券</h3>
+<div >
+<br/>
+
+  $if len(coupons)>0:
+    <table>
+      <tr>
+        <td class="dotbt">优惠券号</td>
+        <td class="dotbt">优惠说明</td>
+        <td class="dotbt">备注</td>
+      </tr>
+      $for c in coupons:
+        <tr>
+          <td class="dotb">$c[0]</td>
+          <td class="dotb">$c[1]</td>
+          <td class="dotb">
+            $if c[2]==0: 有效
+            $else: 已使用
+          </td>
+        </tr>
+    </table>
+  $else:
+    <h4>$msg</h4>
+  
+<p> </p>
+<h4>如何成为会员：</h4>
+<div>网店首次购物或线下登记个人信息后，次日即可成为会员，会员编号为登记的手机号码。会员享受更多优惠和服务。</div>
+<h4>优惠券使用规则：</h4>
+<div>1. 会员关注公众号后，发送登记的手机号码，即可绑定会员身份，在“我的优惠券”里收到新会员见面礼券，此券在成为会员后的第一次购物时领/抵用</div>
+<div>2. 会员将不定期收到促销的电子礼品券/代金券。会员在进网店或实体店消费时凭会员编号和优惠券号即可领/抵用。</div>
+<div>3. 电子礼品券/代金券每次购物只能使用一张；新会员见面礼券可同时与电子礼品券/代金券使用。</div>
+<div>4. 使用后的优惠券立即失效。</div>
+
+</div>

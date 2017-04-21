@@ -1,0 +1,50 @@
+$def with (wxuid,tick,hid,m,c)
+
+$var title: 优惠券管理
+$var css: /static/layout_html5.css
+$var js:
+$var name: 管理员
+
+
+<h3>优惠券管理</h3>
+<div >
+<br/>
+
+<table>
+      <tr>
+      	<td class="dotbt">会员编号</td>
+        <td class="dotbt">会员名称</td>
+      </tr>
+        <tr>
+          <td class="dotb">$m[0]</td>
+          <td class="dotb">$m[1]</td>
+        </tr>
+</table>
+
+<table>
+      <tr>
+        <td class="dotbt">优惠券号</td>
+        <td class="dotbt">优惠说明</td>
+        <td class="dotbt">备注</td>
+      </tr>
+        <tr>
+          <td class="dotb">$c[0]</td>
+          <td class="dotb">$c[1]</td>
+          <td class="dotb">
+            $if c[2]==0: 有效
+            $else: 已使用
+          </td>
+        </tr>
+</table>
+
+$if c[2]==0:
+  <form id="f_login" name="f_login" method="post" action="/coupon_use" data-ajax="false">
+    <input type="hidden" name="wxuid" value="$wxuid">
+    <input type="hidden" name="tick" value="$tick">
+    <input type="hidden" name="hid" value="$hid">
+    <input type="hidden" name="code" value="$c[3]">
+    <label><input data-theme="b" type="submit" name="button" id="button" data-icon="check" value="立即使用" 
+    	onclick="{if(confirm('优惠券使用后不能再恢复，现在要使用吗？')){return true;}return false;}"/></label>
+  </form>
+  
+</div>

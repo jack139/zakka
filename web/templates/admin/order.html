@@ -1,0 +1,33 @@
+$def with (name, str, orders, cat)
+
+$var title: 优惠券管理
+$var css:
+$var js:
+$var name: $str $name
+
+<h3>优惠券管理</h3>
+
+<form name="settings" method="post" action="/admin/order_search">
+<p>查找优惠券：<input class="formtextinput3" type="text" name="code" value=""/>
+&nbsp;<input class="formbutton" type="submit" name="button" id="button" value="开始查找" /><p>
+
+<br/>
+
+<p><a class="act" href="/admin/order_add">添加新优惠券</a>
+  <a class="rdact" href="/admin/order?cat=0">所有优惠券</a>
+  <a class="rdact" href="/admin/order?cat=1">已使用</a>
+  <a class="rdact" href="/admin/order?cat=2">未使用</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="act" href="/admin/order_del" onclick="{if(confirm('确定要删除吗？')){return true;}return false;}">删除已使用的优惠券</a>
+</p>
+
+<p>
+  $if cat==0: 所有优惠券
+  $elif cat==1: 已使用的优惠券
+  $elif cat==2: 未使用的优惠券
+</p>
+
+$for u in orders:
+  <div>
+    $u[0] - $u[1] &nbsp;<$u[2] - $u[3]>
+  </div>
+

@@ -1,0 +1,23 @@
+$def with (name, str, kams, cat)
+
+$var title: 会员管理
+$var css:
+$var js:
+$var name: $str $name
+
+<h3>会员管理</h3>
+
+<p><a class="act" href="/admin/kam_add">添加会员</a>
+  <a class="rdact" href="/admin/kam?cat=0">所有</a>
+  <a class="rdact" href="/admin/kam?cat=1">正常的</a>
+  <a class="rdact" href="/admin/kam?cat=2">停用的</a>
+</p>
+
+<p>
+  $if cat==0: 所有会员
+  $elif cat==1: 正常的会员
+  $elif cat==2: 停用的会员
+</p>
+
+$for u in kams:
+  <div><<a href="/admin/kam_setting?kid=$u[1]">$u[0]</a> - $u[3] - $u[4]> &nbsp;$u[2]&nbsp;&nbsp;$u[5]</div>

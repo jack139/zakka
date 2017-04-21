@@ -1,0 +1,22 @@
+$def with (name, str)
+
+$var title: 添加新会员
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>添加新会员</h3>
+
+<form name="settings" method="post" action="/admin/kam_add">
+<p>会员编码：<input class="formtextinput3" type="text" name="code" value=""/></p>
+<p>会员名称：<input class="formtextinput3" type="text" name="uname" value=""/></p>
+<p>备注说明：<input class="formtextinput3" type="text" name="comment" value="普通会员"/></p>
+
+<p>状态：
+    <input type="radio" name="status" value="OK" checked="checked"/> 正常(OK)
+    <input type="radio" name="status" value="FAIL" /> 停用(FAIL)
+</p>
+<p> </p>
+<p><input class="formbutton" type="submit" name="button" id="button" value="保存" /><p>
+
+</form>

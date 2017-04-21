@@ -1,0 +1,25 @@
+$def with (name, str, info)
+
+$var title: 系统状态
+$var css:
+$var js:
+$var name: $str $name
+    
+<h3>系统状态</h3>
+
+<p><b> $info['uptime']</b></p>
+$for l in info['df_data']:
+  <p>&nbsp;&nbsp;$l</p>
+<br/>
+
+<h3>进程状态: </h3>
+
+<table>
+<tr><td class="dotbt">zakka.py</td>     <td class="dotb">$info['ipcam']</td></tr>
+</table>
+
+<h3>uWSGI - zakka日志: </h3>
+$for l in info['uwsgi_log']:
+  <p>&nbsp;&nbsp;$l</p>
+
+<br/>
